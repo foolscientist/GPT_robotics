@@ -14,6 +14,7 @@ import copy
 import openai
 import os
 os.environ["OPENAI_API_KEY"] = ''
+#自行更改代理端口，注意需使用美国节点
 os.environ['HTTP_PROXY'] = 'http://127.0.0.1:7890'
 os.environ['HTTPS_PROXY'] = 'http://127.0.0.1:7890'
 # openai.proxy = "http://127.0.0.1:7890"
