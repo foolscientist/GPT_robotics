@@ -1,0 +1,13 @@
+### `task_request.json`  
+接口名称：任务请求对象格式
+
+接口描述：用于描述一个任务请求的格式。
+
+|参数名|	必选|	类型|	说明|
+| -------- | -------- | -------- | -------- |
+|unix_millis_earliest_start_time|	否|	integer|	(可选) 任务最早开始时间（Unix时间戳，毫秒）。|
+|priority|	否|	object|	(可选) 任务优先级，需要与车队支持的优先级格式相匹配。|
+|task_priority|	否|	object|	(可选) 用于在任务队列中排序的任务优先级，需要与车队支持的优先级格式相匹配。|
+|category|	是|	string|	任务类型。|
+|description|	是|	object|	任务描述，需要与车队支持的任务类型相匹配。|
+|labels|	否|	array|	描述该任务请求目的的标签|

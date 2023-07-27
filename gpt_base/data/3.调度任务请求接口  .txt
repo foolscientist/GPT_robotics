@@ -1,0 +1,5 @@
+接口名称：dispatch_task_request  
+接口描述：调度任务请求接口，发起一个任务调度请求，将该任务分配给最合适的车队进行执行。
+请求参数：
+1.type 必选：是 类型：string 说明：请求类型，取值范围为 "dispatch_task_request"。
+2.request 必选：是 类型：object 说明：任务请求对象, 格式参见 task_request.json 文件

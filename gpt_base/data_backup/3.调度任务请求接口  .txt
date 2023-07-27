@@ -1,0 +1,27 @@
+### `dispatch_task_request `  
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/open-rmf/rmf_api_msgs/main/rmf_api_msgs/schemas/dispatch_task_request.json",
+  "title": "Dispatch Task Request",
+  "description": "Request that a task be dispatched to the best available fleet",
+  "type": "object",
+  "properties": {
+    "type": {
+      "description": "Indicate that this is a task dispatch request",
+      "type": "string",
+      "enum": ["dispatch_task_request"]
+    },
+    "request": { "$ref": "task_request.json" }
+  },
+  "required": ["type", "request"]
+}
+```
+接口名称：调度任务请求接口  
+
+接口描述：发起一个任务调度请求，将该任务分配给最合适的车队进行执行。
+
+|参数名|	必选|	类型|	说明|
+| -------- | -------- | -------- | -------- |
+|type|	是|	string|	请求类型，取值范围为 "dispatch_task_request"。|
+|request|	是|	object|	任务请求对象, 格式参见 task_request.json 文件|

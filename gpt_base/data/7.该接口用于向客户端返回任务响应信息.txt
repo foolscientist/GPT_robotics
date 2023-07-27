@@ -1,0 +1,11 @@
+接口名称：ApiResponse.msg
+接口描述：该接口用于向客户端返回任务响应信息
+返回参数：
+1.type 类型：uint8 说明：表示响应的类型： TYPE_UNINITIALIZED、TYPE_ACKNOWLEDGE、TYPE_RESPONDING
+其中  
+`TYPE_UNINITIALIZED = 0`：表示消息未正确初始化，将导致错误响应。  
+`TYPE_ACKNOWLEDGE = 1`：表示请求被确认，将会延长 API 节点的响应超时时间，可以用于延长需要较长时间才能完成的请求的生命周期。每次发送确认响应时，请求的生命周期将会被延长。  
+`TYPE_RESPONDING = 2`：表示此消息正在响应请求，因此属于完成请求。
+2.json_msg 类型：string 说明：表示响应的JSON格式消息
+3.request_id 类型：string 说明：表示该响应所对应请求的唯一标识符
+

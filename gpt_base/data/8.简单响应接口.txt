@@ -1,0 +1,5 @@
+接口名称：simple_response
+接口描述：简单响应接口，该接口用于返回成功或者失败的响应，包括错误信息描述。
+返回参数：
+1.success 类型：boolean 说明：标识请求是否成功，true表示成功，false表示失败。
+2.errors 类型：array 说明：当success为false时，包含错误信息列表；否则该字段不存在。

@@ -1,0 +1,15 @@
+#### `pickup与dropoff`
+`具体格式参考rmf\rmf_ros2\rmf_fleet_adapter\schemas\event_description__pickup.json`
+|参数名|	类型|	说明|
+| -------- | -------- | -------- |
+|place|	object|	描述物品传输操作发生的地点信息,waypoint名称|
+|handler|	string|	`描述本次pickup任务的处理者 与 用户ID等对应`|
+|payload|	array|	描述物品传输载荷相关的信息|
+
+payload字段是一个复合类型，它可以表示单个物品或多个物品。  
+**服务器不关心payload内容可以为[]**
+|参数名|	类型|	说明|
+| -------- | -------- | -------- |
+|sku|	string|	物品唯一标识符|
+|quantity|	integer|	物品数量|
+|compartment|	string|	物品存放处（可选）|

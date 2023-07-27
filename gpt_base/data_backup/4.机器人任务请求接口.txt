@@ -1,0 +1,37 @@
+### `robot_task_request`  
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/open-rmf/rmf_api_msgs/main/rmf_api_msgs/schemas/robot_task_request.json",
+  "title": "Robot Task Request",
+  "description": "Request to be directly assigned to a specific robot",
+  "type": "object",
+  "properties": {
+    "type": {
+      "description": "Indicate that this is a task dispatch request",
+      "type": "string",
+      "constant": "robot_task_request"
+    },
+    "robot": {
+      "description": "The name of the robot",
+      "type": "string"
+    },
+    "fleet": {
+      "description": "The fleet the robot belongs to",
+      "type": "string"
+    },
+    "request": { "$ref": "task_request.json" }
+  },
+  "required": ["type", "robot", "fleet", "request"]
+}
+```
+接口名称：机器人任务请求接口
+
+接口描述：发起一个机器人任务请求，要求被直接分配给指定机器人执行。
+
+|参数名|	必选|	类型|	说明|
+| -------- | -------- | -------- | -------- |
+|type|	是|	string|	请求类型，取值范围为 "robot_task_request"。|
+|robot|	是|	string|	指定执行该任务的机器人名称。|
+|fleet|	是|	string|	该机器人所属车队名称。|
+|request|	是|	object|	任务请求对象, 格式参见 task_request.json 文件|

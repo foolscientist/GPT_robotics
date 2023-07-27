@@ -1,0 +1,6 @@
+接口名称：cancel_task_request
+接口描述：取消任务请求接口，提供了一种用于取消特定任务的方法。
+请求参数：
+1.type 必选：是 类型：string 说明：请求类型，取值范围为 "cancel_task_request"。
+2.task_id 必选：是 类型：string 说明：指定要取消的任务ID。
+3.labels 必选：否 类型：string 说明：描述取消目的的标签数组，元素类型为string

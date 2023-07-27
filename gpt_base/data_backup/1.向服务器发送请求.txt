@@ -1,0 +1,15 @@
+## `ApiRequest.msg`  
+**topic：'task_api_requests'**  
+该接口用于向服务器发送任务请求
+```msg  
+# The JSON message that represents the request
+string json_msg
+
+# The unique ID assigned to this request
+string request_id
+```  
+
+|参数名称|	参数类型|	参数描述|
+| -------- | -------- | -------- |
+|json_msg|	string|	表示请求的JSON格式消息|
+|request_id|	string|	表示请求的唯一标识符|

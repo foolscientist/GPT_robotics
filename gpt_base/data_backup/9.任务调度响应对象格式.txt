@@ -1,0 +1,13 @@
+### `dispatch_task_response`  
+
+接口名称：任务调度响应对象格式
+
+接口描述：用于描述一个任务调度请求的响应格式。
+
+|参数名|	类型|	说明|
+| -------- | -------- | -------- |
+|success|	boolean|	任务调度请求是否成功|
+|state|	object|	任务的当前状态,参考task_state.json|
+|errors|	array|	如果任务调度请求失败，则返回错误信息，参考error.json|
+
+备注：如果任务调度请求成功，返回包含success和state字段的json对象。如果任务调度请求失败，会返回包含success和errors字段的json对象。其中state字段对应的是task_state.json中定义的任务状态格式，而errors字段包含的则是一组错误信息，每条信息对应的是error.json中定义的错误格式。

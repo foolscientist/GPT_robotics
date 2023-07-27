@@ -1,0 +1,7 @@
+### `robot_task_response`  
+
+接口名称：机器人任务响应对象格式
+
+接口描述：用于描述一个机器人任务请求的响应格式。
+
+**与dispatch_task_response.json文件中定义的响应格式完全一致，因此该接口只是简单地引用了原来定义好的dispatch_task_response.json文件，没有自己特定的返回参数。**

@@ -1,0 +1,7 @@
+接口名称：robot_task_request
+接口描述：机器人任务请求接口，发起一个机器人任务请求，要求被直接分配给指定机器人执行。
+请求参数：
+1.type 必选：是 类型：string 说明：请求类型，取值范围为 "robot_task_request"。
+2.robot 必选：是 类型：string 说明：指定执行该任务的机器人名称。
+3.fleet 必选：否 类型：string 说明：该机器人所属车队名称。
+4.request 必选：是 类型：object 说明：任务请求对象, 格式参见 task_request.json 文件。

@@ -1,0 +1,7 @@
+接口名称：pickup_and_dropoff
+接口描述：控制机器人进行拾取与转移特定物品的接口
+请求参数：
+1.place 类型：object 说明：描述物品传输操作发生的地点信息,waypoint名称
+2.handler 类型：string 说明：描述本次pickup任务的处理者 与 用户ID等对应
+3.payload 类型：array 说明：描述物品传输载荷相关的信息
+payload字段是一个复合类型，它可以表示单个物品或多个物品，服务器不关心payload内容可以为[]

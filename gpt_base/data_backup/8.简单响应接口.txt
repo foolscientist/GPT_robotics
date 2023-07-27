@@ -1,0 +1,24 @@
+### `simple_response`
+
+接口名称：简单响应接口
+
+接口描述：该接口用于返回成功或者失败的响应，包括错误信息描述。
+
+
+返回参数：
+
+|参数名|	类型|	说明|
+| -------- | -------- | -------- |
+|success|	boolean|	标识请求是否成功，true表示成功，false表示失败。|
+|errors|	array|	当success为false时，包含错误信息列表；否则该字段不存在。|
+
+**在rmf当中某些response例如cancel_task_response使用的是这个**  
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/open-rmf/rmf_api_msgs/main/rmf_api_msgs/schemas/cancel_task_response.json",
+  "title": "Task Cancel Response",
+  "description": "Response to a request to cancel a task",
+  "$ref": "simple_response.json"
+}
+```

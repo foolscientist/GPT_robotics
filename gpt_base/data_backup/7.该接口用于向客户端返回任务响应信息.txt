@@ -1,0 +1,37 @@
+## `ApiResponse.msg`  
+**topic：'task_api_responses'**  
+该接口用于向客户端返回任务响应信息
+```
+# This response type means the message was not initialized correctly and will
+# result in an error
+uint8 TYPE_UNINITIALIZED = 0
+
+# This response type means the request is being acknowledged which will grant it
+# some extra time before the API Node has its response timeout. This can be used
+# to extend the lifetime of a request which may take a long time to complete.
+# Each time an acknowledgment is sent the lifetime will be extended.
+uint8 TYPE_ACKNOWLEDGE = 1
+
+# This response type means this message is responding to the request and
+# therefore fulfilling the request.
+uint8 TYPE_RESPONDING = 2
+
+# The type of response this is: Acknowledging or Responding
+# (Uninitialized will result in the API Node issuing an error response)
+uint8 type
+
+# The JSON message that represents the response
+string json_msg
+
+# The unique ID of the request that this response is targeted at
+string request_id
+|参数名称|	参数类型  |	参数描述|
+| -------- | ---------- | -------- |
+|type|	uint8 |	表示响应的类型： TYPE_UNINITIALIZED、TYPE_ACKNOWLEDGE、TYPE_RESPONDING|
+|json_msg|	string |	表示响应的JSON格式消息|
+|request_id|	string |	表示该响应所对应请求的唯一标识符|
+
+其中  
+`TYPE_UNINITIALIZED = 0`：表示消息未正确初始化，将导致错误响应。  
+`TYPE_ACKNOWLEDGE = 1`：表示请求被确认，将会延长 API 节点的响应超时时间，可以用于延长需要较长时间才能完成的请求的生命周期。每次发送确认响应时，请求的生命周期将会被延长。  
+`TYPE_RESPONDING = 2`：表示此消息正在响应请求，因此属于完成请求。
